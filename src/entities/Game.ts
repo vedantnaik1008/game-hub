@@ -13,4 +13,11 @@ export interface Game {
     parent_platforms: { platform: Platform }[];
     metacritic: number;
     rating_top: number;
+    trailers: Trailer;
+}
+
+interface Trailer{
+    id: number;
+    name: string;
+    preview: string;
 }
