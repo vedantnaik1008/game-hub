@@ -16,12 +16,14 @@ const SortSelector = () => {
         const sortOrder = useGameQueryStore(s => s.gameQuery.sortOrder)
         const currentSortOrder = sortOrders.find(order => order.value === sortOrder)
   return (
-    <Menu>
-    <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+    <Menu >
+    <MenuButton as={Button} rightIcon={<BsChevronDown />} transition='all 0.2s'
+    borderRadius='md'
+    borderWidth='1px'>
         Order by: {currentSortOrder?.label || 'Relevance'}
     </MenuButton>
-    <MenuList>
-     {sortOrders.map(order => <MenuItem key={order.value} value={order.value} onClick={()=> setSortOrder(order.value)}>{order.label}</MenuItem>)}
+    <MenuList bg={'transparent'} backdropFilter={'blur(20px)'}>
+     {sortOrders.map(order => <MenuItem key={order.value} value={order.value} onClick={()=> setSortOrder(order.value)}  bg={'transparent'} _hover={{bg:'whiteAlpha.300'}}>{order.label}</MenuItem>)}
     </MenuList>
     
 </Menu>

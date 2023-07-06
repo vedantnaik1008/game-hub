@@ -5,9 +5,11 @@ import { Outlet } from 'react-router-dom'
 const layout = () => {
   return (
     <>
-      <NavBar />
-      <Box padding={5}>
-        <Outlet />
+      <Box bgGradient={'linear(to-r, #9e1f63 , #392d91)'}>
+        <NavBar />
+        <Box padding={5}>
+          <Outlet/>
+        </Box>
       </Box>
     </>
   )

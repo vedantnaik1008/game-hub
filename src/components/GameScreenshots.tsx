@@ -13,9 +13,11 @@ const GameScreenshots = ({gameId}: Props) => {
     if (isLoading) return null;
 
     return <>
-    <SimpleGrid columns={{base: 1, md: 2}} spacing={2}>
+    <SimpleGrid columns={{base: 1, md: 2}} spacing={5} marginY={4}>
         {data?.results.map(file => 
-        <Image key={file.id} src={file.image} />)}
+        <Image key={file.id} src={file.image} borderRadius={20} objectFit={'cover'} transition={'all .15s ease-in'} _hover={{
+            transform: 'scale(1.06)'
+        }}/>)}
     </SimpleGrid>
     </>
 }

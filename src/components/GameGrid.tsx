@@ -30,9 +30,6 @@ const GameGrid = () => {
                 </React.Fragment>)}
             </SimpleGrid>
         </InfiniteScroll>
-        
-        //{/* {hasNextPage && (<Button onClick={() => fetchNextPage()} marginY={5}>{isFetchingNextPage? 'Loading...' : 'Load More'}</Button>
-        //)} */}
   )
 }
 
