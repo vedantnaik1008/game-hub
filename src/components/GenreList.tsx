@@ -1,12 +1,14 @@
 import {
+    Box,
     Button,
+    Flex,
     Heading,
+    Hide,
     HStack,
     Image,
     List,
     ListItem,
     Spinner,
-    Box,
 } from '@chakra-ui/react';
 import useGenres from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
@@ -23,39 +25,22 @@ const GenreList = () => {
 
     return (
         <>
-            <Box>
-                <Heading fontSize='2xl' marginTop={9} marginBottom={3}>
-                    Genres
-                </Heading>
+            <Heading fontSize='2xl' marginTop={9} marginBottom={3} textAlign={{base: 'center',md: 'center', lg: 'start'}}>
+                Genres
+            </Heading> 
+           
                 <List>
-                    {data?.results.map((genre) => (
-                        <ListItem key={genre.id} paddingY='5px'>
-                            <HStack >
-                                <Image
-                                    boxSize='32px'
-                                    borderRadius={8}
-                                    objectFit='cover'
-                                    src={getCroppedImageUrl(genre.image_background)}
-                                />
-                                <Button
-                                    whiteSpace='normal'
-                                    textAlign='left'
-                                    fontWeight={
-                                        genre.id === selectedGenreId
-                                            ? 'bold'
-                                            : 'normal'
-                                    }
-                                    color={'white'}
-                                    onClick={() => setSelectedGenreId(genre.id)}
-                                    fontSize='md'
-                                    variant='link'>
-                                    {genre.name}
-                                </Button>
-                            </HStack>
-                        </ListItem>
-                    ))}
+                    <Flex flexDirection={{base: 'row', md: 'row', lg: 'column'}} wrap={{base: 'wrap', md: 'wrap', lg: 'nowrap'}} gap={{base: '0', md: '1'}} justifyContent={'center'}>
+                        {data?.results.map((genre) => (
+                            <ListItem key={genre.id} paddingY='5px'>
+                                    <HStack>
+                                            <Image boxSize='32px'borderRadius={8}objectFit='cover'src={getCroppedImageUrl(genre.image_background)} display={{base: 'none', md: 'none', lg: 'block'}}/>
+                                        <Button whiteSpace='normal'textAlign={{lg: 'left'}} bgColor={{base: 'transparent', md: 'transparent',lg: 'unset', xl: 'unset'}} borderWidth={{base: 'thin',  lg: '0'}} padding={{base: '2', md: '3',lg: 'unset', xl: 'unset'}} borderRadius={{base: '2xl',md: '2xl', lg: 'unset', xl: 'unset'}} fontWeight={genre.id === selectedGenreId? 'bold': 'normal'} color={'white'} onClick={() => setSelectedGenreId(genre.id)} fontSize='md' variant={{base: 'ghost', md: 'ghost',lg:'link', xl: 'link'}}>{genre.name}</Button>
+                                    </HStack>
+                            </ListItem>))}
+                    </Flex>
                 </List>
-            </Box>
+            
         </>
     );
 };

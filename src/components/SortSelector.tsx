@@ -22,7 +22,7 @@ const SortSelector = () => {
     borderWidth='1px'>
         Order by: {currentSortOrder?.label || 'Relevance'}
     </MenuButton>
-    <MenuList bg={'transparent'} backdropFilter={'blur(20px)'}>
+    <MenuList bg={'transparent'} backdropFilter={'blur(50px)'}>
      {sortOrders.map(order => <MenuItem key={order.value} value={order.value} onClick={()=> setSortOrder(order.value)}  bg={'transparent'} _hover={{bg:'whiteAlpha.300'}}>{order.label}</MenuItem>)}
     </MenuList>
     

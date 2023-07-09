@@ -18,7 +18,7 @@ const PlatformSelector = () => {
     borderWidth='1px' as={Button} rightIcon={<BsChevronDown />}>
                 {selectedPlatform?.name || 'Platforms'}
             </MenuButton>
-            <MenuList bg={'transparent'} backdropFilter={'blur(20px)'}>
+            <MenuList bg={'transparent'} backdropFilter={'blur(50px)'}>
                 {data?.results.map((platform) => (
                     <MenuItem
                         onClick={() => setSelectedPlatformId(platform.id)}

@@ -5,3 +5,15 @@ form{
 .video{
     border-radius: 25px;
 }
+
+.dont-show{
+    transform: translateX(0%);
+    transition: transform .15s ease-in;
+} 
+.show-nav{
+    transform: translateX(100%);
+}
+
+.cart{
+    color: white;
+}

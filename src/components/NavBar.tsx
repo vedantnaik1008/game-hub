@@ -1,19 +1,25 @@
-import { HStack, Icon, Image, Text} from "@chakra-ui/react"
+import { Box, HStack, Icon, Image, Text} from "@chakra-ui/react"
 import logo from "../assets/Logo/logo.webp"
 import Searchinput from "./Searchinput"
 import { Link } from "react-router-dom"
-import {GrCart} from 'react-icons/gr'
+import useGameQueryStore from "../store"
+import { MdOutlineLibraryBooks } from "react-icons/md"
 
 const NavBar = () => {
+  const items = useGameQueryStore(s => s.game.game.length)
   return (
     <div>
-      <HStack  padding='10px' pos={'relative'}>
+      <HStack padding={{base: '10px', md:'10px'}} pos={'relative'}>
         <Link to='/'>
-          <Image src={logo} boxSize='60px' objectFit='cover'/>
+          <Image src={logo} boxSize={'60px'} objectFit='cover'/>
         </Link>
       <Searchinput />
-       <Text pos={'absolute'} top={1} right={5} color={'white'} fontSize={'18px'} fontWeight={'bold'}>0</Text>
-       <Icon as={GrCart} boxSize={9}  color='white'/>
+       <Box>
+         <Text pos={'absolute'} top={0} right={{base: '3', md: '4'}} color={'white'} fontSize={'18px'} fontWeight={'bold'}>{items}</Text>
+         <Link to={"cart"}>
+           <Icon as={MdOutlineLibraryBooks}  boxSize={{base: '7', md: '9'}}/>
+         </Link>
+       </Box>
       </HStack>
     </div>
   )
