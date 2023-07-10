@@ -15,7 +15,7 @@ const axiosInstance =  axios.create({
     }
 })
 
-//'481139ea12ad4917b3f99ca508d293b9'
+
 class APIClient<T>{
     endpoint: string;
 
