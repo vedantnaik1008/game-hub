@@ -1,4 +1,4 @@
-import { Grid, GridItem, Flex, Box, Icon, Button} from "@chakra-ui/react"
+import { Grid, GridItem, Flex, Box, Icon, Button } from "@chakra-ui/react"
 import GameGrid from "../components/GameGrid"
 import GameHeading from "../components/GameHeading"
 import GenreList from "../components/GenreList"
@@ -29,11 +29,18 @@ const HomePage = () => {
   }, []);
 
     const handleClick = () => {
-      ref.current?.scrollIntoView({ behavior: 'smooth'});
+      if(ref.current){
+        const offset = 100; 
+        const targetPosition = ref.current?.offsetTop - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      }
     };
   return (
     <>
-    <Box pos={'relative'}>
+    <Box ref={ref}>
     {isVisible && <Button pos={'fixed'} padding={2} borderRadius={'50%'} color={'blackAlpha.900'} bgColor={'white'} zIndex={2} bottom={1} right={0}  onClick={handleClick}><Icon fontSize={'18px'} transform={'rotate(90deg)'} as={BsChevronLeft}/></Button>}
       <Grid templateAreas={{
         base: `"aside"
@@ -47,9 +54,9 @@ const HomePage = () => {
           <GenreList />
         </GridItem>
         <GridItem area='main'>
-          <Box paddingLeft={2} ref={ref}>
+          <Box paddingLeft={2} >
             <GameHeading />
-            <Flex marginBottom={5} direction={{base: 'column', md: 'row'}} gap={{base: '2'}} >
+            <Flex marginBottom={5} direction={{base: 'column', md: 'row'}} gap={{base: '2'}}>
               <Box marginRight={5}>
                 <PlatformSelector />
               </Box>

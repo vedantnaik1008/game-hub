@@ -6,14 +6,15 @@ form{
     border-radius: 25px;
 }
 
-.dont-show{
-    transform: translateX(0%);
-    transition: transform .15s ease-in;
-} 
-.show-nav{
-    transform: translateX(100%);
-}
-
-.cart{
-    color: white;
-}
+::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2575fc; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #FFFFFF; 
+    border-radius: 10px;
+  }

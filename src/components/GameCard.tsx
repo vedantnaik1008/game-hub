@@ -36,7 +36,7 @@ const GameCard = ({ game }: Props) => {
                         <Emoji rating={game.rating_top} />
                         <Center marginTop={5}>
                                 <Button transition={'all .15s ease-in'}
-                                bgColor='#2575fc' borderColor='#2575fc' _hover={{bgColor: '#2575fc'}} color='white'  onClick={addToCart} gap={2} width="100%" variant='solid'><MdAdd fontSize={'20px'}/> Add to Library</Button>
+                                bgColor='#2575fc' borderColor='#2575fc' color='white'  onClick={addToCart} gap={2} width="100%" variant='solid'><MdAdd fontSize={'20px'}/> Add to Library</Button>
                         </Center>
                     </Box>
                 </CardBody>
