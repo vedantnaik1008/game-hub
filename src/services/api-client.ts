@@ -6,16 +6,13 @@ export interface FetchResponse<T>{
     results: T[];
 }
 
-const apiKey = import.meta.env.VITE_API_KEY
-
 const axiosInstance =  axios.create({
     baseURL: 'https://api.rawg.io/api',
     params: {
-        key: `${apiKey}`
+        key: import.meta.env.VITE_API_KEY
     }
 })
-
-
+//f9cd515f5be843f4a907fd4d3a6bb1d0
 class APIClient<T>{
     endpoint: string;
 
