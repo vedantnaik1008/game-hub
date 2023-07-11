@@ -2,7 +2,6 @@ import {
     Button,
     Flex,
     Heading,
-    Hide,
     HStack,
     Image,
     List,
@@ -34,7 +33,7 @@ const GenreList = () => {
                             <ListItem key={genre.id} paddingY='5px'>
                                     <HStack>
                                             <Image boxSize='32px'borderRadius={8}objectFit='cover'src={getCroppedImageUrl(genre.image_background)} display={{base: 'none', md: 'none', lg: 'block'}}/>
-                                        <Button whiteSpace='normal'textAlign={{lg: 'left'}} bgColor={{base: 'transparent', md: 'transparent',lg: 'unset', xl: 'unset'}} borderWidth={{base: 'thin',  lg: '0'}} padding={{base: '2', md: '3',lg: 'unset', xl: 'unset'}} borderRadius={{base: '2xl',md: '2xl', lg: 'unset', xl: 'unset'}} fontWeight={genre.id === selectedGenreId? 'bold': 'normal'} color={'white'} onClick={() => setSelectedGenreId(genre.id)} fontSize='md' variant={{base: 'ghost', md: 'ghost',lg:'link', xl: 'link'}}>{genre.name}</Button>
+                                        <Button whiteSpace='normal' textAlign={{lg: 'left'}} bgColor={{base: 'transparent', md: 'transparent',lg: 'unset', xl: 'unset'}} borderWidth={{base: 'thin',  lg: '0'}} padding={{base: '2', md: '3',lg: 'unset', xl: 'unset'}} borderRadius={{base: '2xl',md: '2xl', lg: 'unset', xl: 'unset'}} fontWeight={genre.id === selectedGenreId? 'bold': 'normal'} color={'white'} onClick={() => setSelectedGenreId(genre.id)} fontSize='md' variant={{base: 'ghost', md: 'ghost',lg:'link', xl: 'link'}}>{genre.name}</Button>
                                     </HStack>
                             </ListItem>))}
                     </Flex>
