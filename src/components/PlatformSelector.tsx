@@ -13,9 +13,7 @@ const PlatformSelector = () => {
 
     return (
         <Menu>
-            <MenuButton transition='all 0.2s'
-    borderRadius='md'
-    borderWidth='1px' bgColor={'whiteAlpha.200'} _hover={{bgColor: 'whiteAlpha.400'}} color={'white'} _active={{bgColor: 'whiteAlpha.600'}} as={Button} rightIcon={<BsChevronDown />}>
+            <MenuButton transition='all 0.2s' borderRadius='md' borderWidth='1px' bgColor={'whiteAlpha.200'} _hover={{bgColor: 'whiteAlpha.400'}} color={'white'} _active={{bgColor: 'whiteAlpha.600'}} as={Button} rightIcon={<BsChevronDown />}>
                 {selectedPlatform?.name || 'Platforms'}
             </MenuButton>
             <MenuList bg={'transparent'} backdropFilter={'blur(40px)'} borderWidth={'1px'}>
