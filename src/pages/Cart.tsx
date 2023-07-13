@@ -13,8 +13,8 @@ const Cart = () => {
    const clear = useGameQueryStore(s => s.game.clear)
   return (
     <>
-      <Box paddingBottom='10px' height={'4000px'}>
-        <Button bgColor='red' borderColor={'red'} color={'white'} _hover={{bgColor: 'red'}} marginBottom={5} onClick={()=> clear()}>🗑<Text marginLeft={1}>Clear all</Text></Button>
+      <Box paddingBottom='10px'>
+        <Button bgColor='red' borderColor={'red'} color={'white'} _hover={{bgColor: 'red.900'}} marginBottom={5} onClick={()=> clear()}>🗑<Text marginLeft={1}>Clear all</Text></Button>
           <SimpleGrid  columns={{sm: 1, md: 2, lg: 3, xl: 4}}  spacing={6}>
                 {items.game.map(g=> (
                     <Card key={g.id} bgColor='#ffffff40' bgGradient='linear(to-r,#0f2027 0%, #203a43 100%)' backdropFilter='blur(4px)' boxShadow='lg' transition={'all .15s ease-in'} overflow={'hidden'}>

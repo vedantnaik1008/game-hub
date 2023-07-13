@@ -6,6 +6,7 @@ import PlatformSelector from "../components/PlatformSelector"
 import SortSelector from "../components/SortSelector"
 import { BsChevronLeft} from 'react-icons/bs';
 import { useEffect, useRef, useState } from "react"
+import GenreSlide from "../components/GenreSlide"
 
 
 
@@ -41,7 +42,7 @@ const HomePage = () => {
   return (
     <>
     <Box ref={ref}>
-    {isVisible && <Button pos={'fixed'} padding={2} borderRadius={'50%'} color={'blackAlpha.900'} bgColor={'white'} zIndex={2} bottom={1} right={0}  onClick={handleClick}><Icon fontSize={'18px'} transform={'rotate(90deg)'} as={BsChevronLeft}/></Button>}
+    {isVisible && <Button pos={'fixed'} padding={2} borderRadius={'50%'} color={'blackAlpha.900'} bgColor={'white'} zIndex={2} bottom={1} right={1}  onClick={handleClick}><Icon fontSize={'18px'} transform={'rotate(90deg)'} as={BsChevronLeft}/></Button>}
       <Grid templateAreas={{
         base: `"aside"
                "main"`,
@@ -50,7 +51,7 @@ const HomePage = () => {
         base: '1fr',
         lg: '200px 1fr'
       }} >
-        <GridItem area='aside' paddingX={5}>
+        <GridItem area='aside' paddingX={{base: '0', lg: '5'}}>
           <GenreList />
         </GridItem>
         <GridItem area='main'>
