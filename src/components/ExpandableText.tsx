@@ -16,8 +16,8 @@ const ExpandableText = ({children}: Props) => {
     const summary = expanded? children : children.substring(0, limit) + '...';
   return (
     <>
-        <Text>{summary}<Button marginLeft={1} size={'xs'} fontWeight='bold'bg={'transparent'} _hover={{bg:'whiteAlpha.300'}} borderRadius='md'
-        borderWidth='2px' onClick={() => setExpanded(!expanded)}>{expanded ? 'Show Less' : 'Read More'}</Button>
+        <Text color={'white'}>{summary}<Button marginLeft={1} size={'xs'} fontWeight='bold'bg={'transparent'} _hover={{bg:'whiteAlpha.300'}} borderRadius='md'
+        borderWidth='1px' onClick={() => setExpanded(!expanded)}>{expanded ? 'Show Less' : 'Read More'}</Button>
         </Text>
     </>
   )

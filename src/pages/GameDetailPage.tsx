@@ -12,14 +12,14 @@ const GameDetailPage = () => {
     const {slug} = useParams();
     const {data: game, isLoading, error} = useGame(slug!);
 
-    if(isLoading) return <Spinner />
+    if(isLoading) return <Spinner color='white'/>
 
     if(error || !game) throw error;
   return (
     <>
     <SimpleGrid columns={{base: 1, md: 2}} spacing={5} height='100%'>
       <GridItem>
-        <Heading>{game.name}</Heading>
+        <Heading color={'white'}>{game.name}</Heading>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game}/>
       </GridItem>

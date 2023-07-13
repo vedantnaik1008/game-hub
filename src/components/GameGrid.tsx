@@ -16,7 +16,7 @@ const GameGrid = () => {
     const fetchedGamesCount = data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
 
   return (
-        <InfiniteScroll dataLength={fetchedGamesCount} hasMore={!!hasNextPage} next={ () => fetchNextPage()} loader={<Spinner />}>
+        <InfiniteScroll dataLength={fetchedGamesCount} hasMore={!!hasNextPage} next={ () => fetchNextPage()} loader={<Spinner color='white'/>}>
             <SimpleGrid padding='10px' columns={{sm: 1, md: 2, lg: 3, xl: 4}}  spacing={6}>
                 {isLoading && skeletons.map(skeleton => 
                 <GameCardContainer key={skeleton}>

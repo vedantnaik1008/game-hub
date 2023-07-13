@@ -10,7 +10,7 @@ const GameScreenshots = ({gameId}: Props) => {
     console.log(data)
     if (error) throw error;
 
-    if (isLoading) return <Spinner />;
+    if (isLoading) return <Spinner color='white'/>;
 
     return <>
     <SimpleGrid columns={{base: 1, md: 2}} spacing={5} marginY={4}>

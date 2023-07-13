@@ -17,7 +17,7 @@ const NavBar = () => {
        <Box>
          <Text pos={'absolute'} top={0} right={{base: '3', md: '4'}} color={'white'} fontSize={'18px'} fontWeight={'bold'}>{items}</Text>
          <Link to={"cart"}>
-           <Icon as={MdOutlineLibraryBooks}  boxSize={{base: '7', md: '9'}}/>
+           <Icon as={MdOutlineLibraryBooks} color={'white'} boxSize={{base: '7', md: '9'}}/>
          </Link>
        </Box>
       </HStack>

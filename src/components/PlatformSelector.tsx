@@ -15,14 +15,14 @@ const PlatformSelector = () => {
         <Menu>
             <MenuButton transition='all 0.2s'
     borderRadius='md'
-    borderWidth='1px' as={Button} rightIcon={<BsChevronDown />}>
+    borderWidth='1px' bgColor={'whiteAlpha.200'} _hover={{bgColor: 'whiteAlpha.400'}} color={'white'} _active={{bgColor: 'whiteAlpha.600'}} as={Button} rightIcon={<BsChevronDown />}>
                 {selectedPlatform?.name || 'Platforms'}
             </MenuButton>
-            <MenuList bg={'transparent'} backdropFilter={'blur(40px)'}>
+            <MenuList bg={'transparent'} backdropFilter={'blur(40px)'} borderWidth={'1px'}>
                 {data?.results.map((platform) => (
                     <MenuItem
                         onClick={() => setSelectedPlatformId(platform.id)}
-                        key={platform.id} bg={'transparent'} _hover={{bg:'whiteAlpha.300'}}>
+                        key={platform.id} bg={'transparent'} _hover={{bg:'whiteAlpha.300'}} color={'white'}>
                         {platform.name} 
                     </MenuItem>
                 ))}

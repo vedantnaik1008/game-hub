@@ -17,8 +17,9 @@ const Searchinput = () => {
         }
     }}>
         <InputGroup>
-            <InputLeftElement children={< BsSearch />}/>
-            <Input ref={ref} borderRadius={20} placeholder='Search games...' variant='filled'  _placeholder={{ color: 'white' }} color={'white'}/>
+            <InputLeftElement children={< BsSearch color='white'/>}/>
+    color: #0095ff;
+            <Input ref={ref}  borderRadius={20} placeholder='Search games...' variant='filled'  _placeholder={{ color: 'white' }} color={'white'} bgColor={'whiteAlpha.100'} _hover={{bgColor: ''}} borderWidth={'1px'} borderColor={'white'} _focusVisible={{borderColor: ''}}/>
         </InputGroup>
     </form>
   )

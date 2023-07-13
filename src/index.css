@@ -11,10 +11,10 @@ form{
   }
   
   ::-webkit-scrollbar-track {
-    background: #2575fc; 
+    background: #FFFFFF;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #FFFFFF; 
+    background: transparent; 
     border-radius: 10px;
   }

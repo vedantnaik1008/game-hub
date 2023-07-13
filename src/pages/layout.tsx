@@ -5,9 +5,9 @@ import { Outlet } from 'react-router-dom'
 const layout = () => {
   return (
     <>
-      <Box bgGradient={'linear(to-r,#6a11cb 0%, #2575fc 100%)'} scrollBehavior={'smooth'} height={'100%'}>
+      <Box bgGradient={'linear(to right, #00b4db 0%,#602f6b 100%)'} scrollBehavior={'smooth'} display={'flex'} flexDirection={'column'}>
         <NavBar />
-        <Box padding={5}>
+        <Box padding={5} flexGrow={{base: '1', md: '1', lg: '1', xl: '1'}}>
           <Outlet/>
         </Box>
       </Box>

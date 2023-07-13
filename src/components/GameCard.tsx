@@ -23,7 +23,7 @@ const GameCard = ({ game }: Props) => {
             <Card bgColor='#ffffff40' backdropFilter='blur(4px)' boxShadow='lg' bgGradient='linear(to-r,#0f2027 0%, #203a43 100%)' transition={'all .15s ease-in'}>
                 <Link to={'/games/' + game.slug}><Image src={getCroppedImageUrl(game.background_image)} objectFit='cover' w={'100%'}/></Link>
                 <CardBody>
-                    <Heading fontSize='2xl'>
+                    <Heading fontSize='2xl' color={'white'}>
                         <Text>{game.name}</Text>
                     </Heading>
                     <HStack marginTop={3} justifyContent='space-between'>
@@ -36,7 +36,7 @@ const GameCard = ({ game }: Props) => {
                         <Emoji rating={game.rating_top} />
                         <Center marginTop={5}>
                                 <Button transition={'all .15s ease-in'}
-                                bgColor='#2575fc' borderColor='#2575fc' color='white'  onClick={addToCart} gap={2} width="100%" variant='solid'><MdAdd fontSize={'20px'}/> Add to Library</Button>
+                                bgColor='#2575fc' borderColor='#2575fc' color='white' _hover={{bgColor: 'transparent', borderColor: 'white', borderWidth: 'thin'}} onClick={addToCart} gap={2} width="100%" variant='solid'><MdAdd fontSize={'20px'}/> Add to Library</Button>
                         </Center>
                     </Box>
                 </CardBody>

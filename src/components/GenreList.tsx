@@ -7,6 +7,7 @@ import {
     List,
     ListItem,
     Spinner,
+    Text
 } from '@chakra-ui/react';
 import useGenres from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
@@ -23,7 +24,7 @@ const GenreList = () => {
 
     return (
         <>
-            <Heading fontSize='2xl' marginTop={9} marginBottom={3} textAlign={{base: 'center',md: 'center', lg: 'start'}}>
+            <Heading fontSize='3xl' marginTop={9} marginBottom={3} textAlign={{base: 'center',md: 'center', lg: 'start'}} color={'white'}>
                 Genres
             </Heading> 
            
@@ -33,7 +34,7 @@ const GenreList = () => {
                             <ListItem key={genre.id} paddingY='5px'>
                                     <HStack>
                                             <Image boxSize='32px'borderRadius={8}objectFit='cover'src={getCroppedImageUrl(genre.image_background)} display={{base: 'none', md: 'none', lg: 'block'}}/>
-                                        <Button whiteSpace='normal' textAlign={{lg: 'left'}} bgColor={{base: 'transparent', md: 'transparent',lg: 'unset', xl: 'unset'}} borderWidth={{base: 'thin',  lg: '0'}} padding={{base: '2', md: '3',lg: 'unset', xl: 'unset'}} borderRadius={{base: '2xl',md: '2xl', lg: 'unset', xl: 'unset'}} fontWeight={genre.id === selectedGenreId? 'bold': 'normal'} color={'white'} onClick={() => setSelectedGenreId(genre.id)} fontSize='md' variant={{base: 'ghost', md: 'ghost',lg:'link', xl: 'link'}}>{genre.name}</Button>
+                                        <Button whiteSpace='normal' textAlign={{lg: 'left'}} bgColor={{base: 'transparent', md: 'transparent',lg: 'unset', xl: 'unset'}} borderWidth={{base: 'thin',  lg: '0'}} padding={{base: '2', md: '3',lg: 'unset', xl: 'unset'}} borderRadius={{base: '2xl',md: '2xl', lg: 'unset', xl: 'unset'}} fontWeight={genre.id === selectedGenreId? 'bold': 'normal'} onClick={() => setSelectedGenreId(genre.id)} fontSize='md' variant={{base: 'ghost', md: 'ghost',lg:'link', xl: 'link'}} _active={{color: 'white'}} _hover={{color: 'white', bgColor : 'unset'}}><Text textColor={'white'}>{genre.name}</Text></Button>
                                     </HStack>
                             </ListItem>))}
                     </Flex>
