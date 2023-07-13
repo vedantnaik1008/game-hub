@@ -4,10 +4,10 @@ import {
     Heading,
     HStack,
     Image,
-    List,
     ListItem,
     Spinner,
-    Text
+    Text,
+    UnorderedList
 } from '@chakra-ui/react';
 import useGenres from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
@@ -28,7 +28,7 @@ const GenreList = () => {
                 Genres
             </Heading> 
            
-                <List>
+                <UnorderedList as={'ul'} listStyleType={'none'}>
                     <Flex flexDirection={{base: 'row', md: 'row', lg: 'column'}} wrap={{base: 'wrap', md: 'wrap', lg: 'nowrap'}} gap={{base: '0', md: '1'}} justifyContent={'center'}>
                         {data?.results.map((genre) => (
                             <ListItem key={genre.id} paddingY='5px'>
@@ -38,7 +38,7 @@ const GenreList = () => {
                                     </HStack>
                             </ListItem>))}
                     </Flex>
-                </List>
+                </UnorderedList>
             
         </>
     );
