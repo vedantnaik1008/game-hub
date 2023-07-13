@@ -3,4 +3,5 @@ export interface Screenshots {
     image: string;
     width: number;
     height: number;
+    name: string;
 }

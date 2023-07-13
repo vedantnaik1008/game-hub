@@ -11,7 +11,7 @@ const NavBar = () => {
     <div>
       <HStack padding={{base: '10px', md:'10px'}} pos={'relative'}>
         <Link to='/'>
-          <Image src={logo} boxSize={'60px'} objectFit='cover'/>
+          <Image src={logo} boxSize={'60px'} objectFit='cover' alt='game-logo'/>
         </Link>
       <Searchinput />
        <Box>
