@@ -18,7 +18,7 @@ const Cart = () => {
           <SimpleGrid  columns={{sm: 1, md: 2, lg: 3, xl: 4}}  spacing={6}>
                 {items.game.map(g=> (
                     <Card key={g.id} bgColor='#ffffff40' bgGradient='linear(to-r,#0f2027 0%, #203a43 100%)' backdropFilter='blur(4px)' boxShadow='lg' transition={'all .15s ease-in'} overflow={'hidden'}>
-                    <Link to={'/games/' + g.slug}><Image src={getCroppedImageUrl(g.background_image)} objectFit='cover' width={'full'} alt={g.name}/></Link>
+                    <Link to={'/games/' + g.slug}><Image src={getCroppedImageUrl(g.background_image)} objectFit='cover' width={'full'} height={'full'} alt={g.name}/></Link>
                     <CardBody>
                         <Heading fontSize='2xl'>
                             <Text color={'white'}>{g.name}</Text>
