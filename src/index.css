@@ -5,16 +5,3 @@ form{
 .video{
     border-radius: 25px;
 }
-
-::-webkit-scrollbar {
-    width: 10px; 
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #FFFFFF;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: transparent; 
-    border-radius: 10px;
-  }

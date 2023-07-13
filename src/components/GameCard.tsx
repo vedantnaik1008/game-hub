@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
       }
     return (
             <Card bgColor='#ffffff40' backdropFilter='blur(4px)' boxShadow='lg' bgGradient='linear(to-r,#0f2027 0%, #203a43 100%)' transition={'all .15s ease-in'}>
-                <Link to={'/games/' + game.slug}><Image src={getCroppedImageUrl(game.background_image)} objectFit='cover' w={'100%'}/></Link>
+                <Link to={'/games/' + game.slug}><Image src={getCroppedImageUrl(game.background_image)} objectFit='cover' w={'100%'} alt={game.name}/></Link>
                 <CardBody>
                     <Heading fontSize='2xl' color={'white'}>
                         <Text>{game.name}</Text>
