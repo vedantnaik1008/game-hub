@@ -1,7 +1,7 @@
 html,body #background{
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to right, #00b4db 0%,#602f6b 100%);
+  background-color: #000000;
 }
 
 form{

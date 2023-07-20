@@ -18,7 +18,7 @@ const SortSelector = () => {
     <Menu >
     <MenuButton as={Button} bgColor={'whiteAlpha.200'} _hover={{bgColor: 'whiteAlpha.400'}}  color={'white'} _active={{bgColor: 'whiteAlpha.600'}} rightIcon={<BsChevronDown />} transition='all 0.2s'
     borderRadius='md'
-    borderWidth='1px'>
+    border={'1px solid white'}>
         Order by: {currentSortOrder?.label || 'Relevance'}
     </MenuButton>
     <MenuList bg={'transparent'} backdropFilter={'blur(50px)'} borderWidth={'1px'}>

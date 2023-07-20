@@ -1,4 +1,4 @@
-import { Spinner } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
 import useTrailers from '../hooks/useTrailers'
 
 interface Props{
@@ -14,8 +14,10 @@ const GameTrailer = ({gameId}: Props) => {
    
     const first = data?.results[0];
     return first ? (
-     <video src={first.data.max}
-        poster={first.preview} controls className='video'/>
+     <Box border={'2px solid white'} borderRadius={'25px'}>
+         <video src={first.data.max}
+            poster={first.preview} controls className='video'/>
+     </Box>
     ): null
 }
 

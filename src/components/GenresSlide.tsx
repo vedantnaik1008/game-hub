@@ -36,8 +36,7 @@ const GenresSlide = () => {
                               </Flex>
                           </UnorderedList>
               </Box>
-        
-                </>
+            </>
       )}
     </>
   );
