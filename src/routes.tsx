@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             element: <GameDetailPage /> 
             },
             {
-             path: 'add to library',
+             path: 'add-to-library',
              element: <Cart />
             },
         ]

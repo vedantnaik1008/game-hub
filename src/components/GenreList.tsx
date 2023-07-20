@@ -28,7 +28,7 @@ const GenreList = () => {
                 Genres
             </Heading> 
            
-                <UnorderedList as={'ul'} listStyleType={'none'}>
+                <UnorderedList  listStyleType={'none'}>
                     <Flex flexDirection={{base: 'row', md: 'row', lg: 'column'}} wrap={{base: 'wrap', md: 'wrap', lg: 'nowrap'}} gap={{base: '0', md: '1'}} justifyContent={'center'}>
                         {data?.results.map((genre) => (
                             <ListItem key={genre.id} paddingY='5px'>

@@ -14,6 +14,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
     const add = useGameQueryStore(s => s.game.add)
     const items = useGameQueryStore(s => s.game)
+
     const addToCart = () => {
         if(!items.game.some(item => item.id === game.id)){
           add(game)   
@@ -21,7 +22,9 @@ const GameCard = ({ game }: Props) => {
       }
     return (
             <Card bgColor='#ffffff40' backdropFilter='blur(4px)' boxShadow='0 8px 32px 0 rgba( 31, 38, 135, 0.37 )' bgGradient='linear(to-r,#0f2027 0%, #203a43 100%)' transition={'all .15s ease-in'} border={'1px solid rgba( 255, 255, 255, 0.18 )'}>
-                <NavLink to={'/games/' + game.slug}><Image src={getCroppedImageUrl(game.background_image)} objectFit='cover' w={'100%'} h={'100%'} alt={game.name}/></NavLink>
+                <NavLink to={'/games/' + game.slug}>
+                    <Image  src={getCroppedImageUrl(game.background_image)} objectFit='cover' w={'100%'} h={'100%'} alt={game.name}/>
+                </NavLink>
                 <CardBody>
                     <Heading fontSize='2xl' color={'white'}>
                         <Text>{game.name}</Text>
@@ -36,7 +39,7 @@ const GameCard = ({ game }: Props) => {
                         <Emoji rating={game.rating_top} />
                         <Center marginTop={5}>
                                 <Button transition={'all .15s ease-in'}
-                                bgColor='#2575fc' borderColor='#2575fc' color='white' _hover={{bgColor: 'transparent', borderColor: 'white', borderWidth: 'thin'}} onClick={addToCart} gap={2} width="100%" variant='solid'><MdAdd fontSize={'20px'}/> Add to Library</Button>
+                                bgColor='#2575fc' borderColor='#2575fc' color='white' _hover={{borderColor: 'white', borderWidth: 'thin'}} onClick={addToCart} gap={2} width="100%" variant='solid'><MdAdd fontSize={'20px'}/> Add to Library</Button>
                         </Center>
                     </Box>
                 </CardBody>
