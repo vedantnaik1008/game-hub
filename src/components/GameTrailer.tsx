@@ -11,12 +11,12 @@ const GameTrailer = ({gameId}: Props) => {
    if(isLoading) return <Spinner color='white'/>;
 
    if(error) throw error;
-   
+
     const first = data?.results[0];
     return first ? (
      <Box border={'2px solid white'} borderRadius={'25px'}>
          <video src={first.data.max}
-            poster={first.preview} controls className='video'/>
+            poster={first.preview} controls className='video' />
      </Box>
     ): null
 }

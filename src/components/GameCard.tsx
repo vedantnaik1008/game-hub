@@ -14,12 +14,14 @@ interface Props {
 const GameCard = ({ game }: Props) => {
     const add = useGameQueryStore(s => s.game.add)
     const items = useGameQueryStore(s => s.game)
-
+    
+    
     const addToCart = () => {
         if(!items.game.some(item => item.id === game.id)){
           add(game)   
         }
       }
+
     return (
             <Card bgColor='#ffffff40' backdropFilter='blur(4px)' boxShadow='0 8px 32px 0 rgba( 31, 38, 135, 0.37 )' bgGradient='linear(to-r,#0f2027 0%, #203a43 100%)' transition={'all .15s ease-in'} border={'1px solid rgba( 255, 255, 255, 0.18 )'}>
                 <NavLink to={'/games/' + game.slug}>
